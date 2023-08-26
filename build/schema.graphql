@@ -1,0 +1,35 @@
+type CommentAction @entity(immutable: true) {
+  id: Bytes!
+  commentId: BigInt! # uint256
+  reportId: BigInt! # uint256
+  actor: Bytes! # address
+  content: String! # string
+  timestamp: BigInt! # uint256
+  action: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DiceRolled @entity(immutable: true) {
+  id: Bytes!
+  roller: Bytes! # address
+  rolled: Int! # uint8
+  currentPlan: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ReportAction @entity(immutable: true) {
+  id: Bytes!
+  reportId: BigInt! # uint256
+  actor: Bytes! # address
+  content: String! # string
+  plan: BigInt! # uint256
+  timestamp: BigInt! # uint256
+  action: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
